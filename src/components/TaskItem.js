@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Button from './Button';
 
 const TaskItem = ({ task, editTask, removeTask }) => {
   const [isEditing, setIsEditing] = useState(false);
@@ -39,11 +40,11 @@ const TaskItem = ({ task, editTask, removeTask }) => {
       )}
       <div className="buttons">
         {isEditing ? (
-          <button onClick={handleSubmit}>Salvar</button>
+          <Button onClick={handleSubmit}>Salvar</Button>
         ) : (
-          <button className="secondary" onClick={handleEdit}>Editar</button>
+          <Button className="secondary" onClick={handleEdit}>Editar</Button>
         )}
-        <button className="danger" onClick={() => removeTask(task.id)}>Remover</button>
+        <Button className="danger" onClick={() => removeTask(task.id)}>Remover</Button>
       </div>
     </li>
   );
