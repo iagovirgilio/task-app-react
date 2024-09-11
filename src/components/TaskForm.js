@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 
 function TaskForm({ addTask }) {
-  const [task, setTask] = useState('');
+  const [taskTitle, setTaskTitle] = useState('');
+  const [taskDescription, setTaskDescription] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (task.trim()) {
-      addTask({ title: task });
-      setTask('');
+    if (taskTitle.trim() && taskDescription.trim()) {
+      addTask({ title: taskTitle, description: taskDescription });
+      setTaskTitle('');
+      setTaskDescription('');
     }
   };
 
@@ -15,9 +17,15 @@ function TaskForm({ addTask }) {
     <form onSubmit={handleSubmit}>
       <input
         type="text"
-        value={task}
-        onChange={(e) => setTask(e.target.value)}
-        placeholder="Nova tarefa"
+        value={taskTitle}
+        onChange={(e) => setTaskTitle(e.target.value)}
+        placeholder="Título da tarefa"
+      />
+      <input
+        type="text"
+        value={taskDescription}
+        onChange={(e) => setTaskDescription(e.target.value)}
+        placeholder="Descrição da tarefa"
       />
       <button type="submit">Adicionar</button>
     </form>
