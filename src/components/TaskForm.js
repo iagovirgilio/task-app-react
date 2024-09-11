@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import Button from './Button';
 
-function TaskForm({ addTask }) {
+const TaskForm = ({ addTask }) => {
   const [taskTitle, setTaskTitle] = useState('');
   const [taskDescription, setTaskDescription] = useState('');
 
@@ -27,7 +28,7 @@ function TaskForm({ addTask }) {
         onChange={(e) => setTaskDescription(e.target.value)}
         placeholder="Descrição da tarefa"
       />
-      <button type="submit">Adicionar</button>
+      <Button onClick={handleSubmit}>Adicionar</Button>
     </form>
   );
 }
