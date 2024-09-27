@@ -5,7 +5,7 @@ import TaskList from './components/TaskList/TaskList';
 import Loading from './components/Loading/Loading';
 import Navigation from './components/Navigation/Navigation';
 import { useTasks } from './hooks/useTasks';
-import './App.css';
+import './App.scss';
 
 // Função que retorna o título baseado na rota
 const Header = () => {
