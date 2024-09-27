@@ -1,0 +1,41 @@
+/* Estilo do menu de navegação */
+.navigation {
+    background-color: #333;
+    padding: 10px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+/* Estilo para os itens da lista */
+.navigation ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    /* Centraliza os itens horizontalmente */
+}
+
+/* Estilo dos itens de navegação */
+.navigation li {
+    margin-right: 20px;
+}
+
+/* Estilo dos links */
+.navigation a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+}
+
+/* Mudança de cor ao passar o mouse */
+.navigation li:hover {
+    background-color: white;
+    & a {
+        color: #333;
+    }
+}
