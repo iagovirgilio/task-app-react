@@ -1,5 +1,5 @@
 import React from 'react';
-import TaskItem from './TaskItem';
+import TaskItem from '../TaskItem/TaskItem';
 
 const TaskList = ({ tasks, editTask, removeTask }) => {
   return (

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Button from './Button';
+import Button from '../Button/Button';
 
 const TaskForm = ({ addTask }) => {
   const [taskTitle, setTaskTitle] = useState('');

@@ -1,8 +1,8 @@
 import React from 'react';
-import Header from './components/Header';
-import TaskForm from './components/TaskForm';
-import TaskList from './components/TaskList';
-import Loading from './components/Loading';
+import Header from './components/Header/Header';
+import TaskForm from './components/TaskForm/TaskForm';
+import TaskList from './components/TaskList/TaskList';
+import Loading from './components/Loading/Loading';
 import { useTasks } from './hooks/useTasks';
 
 import './App.css';
