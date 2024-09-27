@@ -1,33 +1,13 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Header from './components/Header/Header'; // Usando o Header atualizado
 import TaskForm from './components/TaskForm/TaskForm';
 import TaskList from './components/TaskList/TaskList';
 import Loading from './components/Loading/Loading';
 import Navigation from './components/Navigation/Navigation';
 import { useTasks } from './hooks/useTasks';
+
 import './App.scss';
-
-// Função que retorna o título baseado na rota
-const Header = () => {
-  const location = useLocation();
-
-  let headerTitle;
-  switch (location.pathname) {
-    case '/':
-      headerTitle = 'Bem-vindo ao Task-App!';
-      break;
-    case '/tasks':
-      headerTitle = 'Gerenciador de Tarefas';
-      break;
-    case '/about':
-      headerTitle = 'Sobre o Projeto';
-      break;
-    default:
-      headerTitle = 'Task-App';
-  }
-
-  return <h1>{headerTitle}</h1>;
-};
 
 function App() {
   const { tasks, loading, addTask, editTask, removeTask } = useTasks();
@@ -38,7 +18,7 @@ function App() {
         {/* Adicionando a navegação */}
         <Navigation />
         
-        {/* Header dinâmico com base na rota */}
+        {/* O componente Header agora cuida da lógica do título */}
         <Header />
         
         {/* Configurando as rotas */}
